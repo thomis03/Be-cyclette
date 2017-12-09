@@ -25,9 +25,9 @@ export default new VueRouter({
   scrollBehavior: () => ({ y: 0 }),
 
   routes: [
-    { path: '/', component: load('Hello') },
-
+    { path: '/', component: load('brand') },
     // Always leave this last one
+    { path: '/test', component: load('App') },
     { path: '*', component: load('Error404') } // Not found
   ]
 })
