@@ -57,22 +57,26 @@ export default new VueRouter({
       // (need to specify it in layout)
       children: [
         {
+          path: '/Discount',
+          component: load('Discount')
+        },
+        {
           path: '/Wallet',
           component: load('Wallet')
         },
         {
           path: '/Map',
-          component: load('Wallet')
+          component: load('Map')
         },
         {
           path: '/Setting',
-          component: load('Wallet')
-        },
-        {
-          path: '/Brand',
-          component: load('brand')
+          component: load('Setting')
         }
       ]
+    },
+    {
+      path: '/Brand',
+      component: load('Brand')
     },
     { path: '*', component: load('Error404') } // Not found
   ]

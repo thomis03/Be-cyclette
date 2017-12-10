@@ -1,7 +1,7 @@
 <template>
   <div>
   <q-toolbar>
-        <q-btn @click="$router.push('/App')" flat>
+        <q-btn @click="$router.push('/Discount')" flat>
           <q-icon><i class="material-icons">keyboard_backspace</i></q-icon>
         </q-btn>
         <q-toolbar-title>IKEA</q-toolbar-title>
@@ -10,8 +10,8 @@
   <div class="description">
     <h4><img class ="ikea_logo" src="../statics/ikea_logo.png" /></h4>
     <p>Pellentesque vel volutpat nisl, vel volutpat enim. Pellentesque habitant morbi. </p>
-  </div>
-  <div>
+  </div>        
+  <div> 
 
     <q-list highlight inset-separator>
       <q-item>
@@ -43,8 +43,8 @@
     </q-list>
   </div>
 </div>
-</template>
-
+</template>  
+   
 <script>
 import {
   QToolbar,
@@ -124,34 +124,33 @@ export default {
   },
 
   methods: {
-  notify (eventName) {
-    Toast.create(`Event "${eventName}" was triggered.`)
+    notify (eventName) {
+    },
+    openSpecialPosition (position) {
+      this.position = position
+      this.$nextTick(() => {
+        this.$refs.positionModal.open()
+      })
+    }
   },
-  openSpecialPosition (position) {
-    this.position = position
-    this.$nextTick(() => {
-      this.$refs.positionModal.open()
-    })
-  }
-},
 
   mounted: function () {
-    this.bounds = new google.maps.LatLngBounds()
-    const element = document.getElementById(this.mapName)
-    const mapCentre = this.markerCoordinates[0]
-    const options = {
-      center: new google.maps.LatLng(mapCentre.latitude, mapCentre.longitude)
-    }
-    this.map = new google.maps.Map(element, options)
-    this.markerCoordinates.forEach((coord) => {
-      const position = new google.maps.LatLng(coord.latitude, coord.longitude)
-      const marker = new google.maps.Marker({
-        position,
-        map: this.map
-      })
-      this.markers.push(marker)
-      this.map.fitBounds(this.bounds.extend(position))
-    })
+    // this.bounds = new google.maps.LatLngBounds()
+    // const element = document.getElementById(this.mapName)
+    // const mapCentre = this.markerCoordinates[0]
+    // const options = {
+    //   center: new google.maps.LatLng(mapCentre.latitude, mapCentre.longitude)
+    // }
+    // this.map = new google.maps.Map(element, options)
+    // this.markerCoordinates.forEach((coord) => {
+    //   const position = new google.maps.LatLng(coord.latitude, coord.longitude)
+    //   const marker = new google.maps.Marker({
+    //     position,
+    //     map: this.map
+    //   })
+    //   this.markers.push(marker)
+    //   this.map.fitBounds(this.bounds.extend(position))
+    // })
   }
 
 }
