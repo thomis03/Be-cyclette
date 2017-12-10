@@ -74,7 +74,7 @@
             </q-item-side>
         </q-item>
     </q-list>
- 
+
 
 
 <!-- <p class="caption">Tab Panes below</p>

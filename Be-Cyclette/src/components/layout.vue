@@ -11,7 +11,8 @@
     <q-tabs style="position: fixed; bottom: 0; width: 100%;" Position="bottom" slot="navigation" v-if="!layoutStore.hideTabs">
       <q-route-tab slot="title" icon="play_circle_outline" to="Wallet" replace label="Wallet" />
       <q-route-tab slot="title" icon="view_array" to="Map" replace label="Map" />
-      <q-route-tab slot="title" icon="pin_drop" to="Setting" replace label="Setting" />
+      <q-route-tab slot="title" icon="view_array" to="Brand" replace label="My truc" />
+      <q-route-tab slot="title" icon="pin_drop" to="Setting" replace label="Settings" />
     </q-tabs>
 
 
