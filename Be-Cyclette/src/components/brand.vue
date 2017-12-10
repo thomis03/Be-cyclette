@@ -1,7 +1,7 @@
 <template>
   <div>
   <q-toolbar>
-        <q-btn @click="$router.push('/App')" flat>
+        <q-btn @click="$router.push('/Discount')" flat>
           <q-icon><i class="material-icons">keyboard_backspace</i></q-icon>
         </q-btn>
         <q-toolbar-title>IKEA</q-toolbar-title>
@@ -10,8 +10,8 @@
   <div class="description">
     <h4><img class ="ikea_logo" src="../statics/ikea_logo.png" /></h4>
     <p>Pellentesque vel volutpat nisl, vel volutpat enim. Pellentesque habitant morbi. </p>
-  </div>
-  <div>
+  </div>        
+  <div> 
 
     <q-list highlight inset-separator>
       <q-item>
@@ -32,8 +32,8 @@
     </q-list>
   </div>
 </div>
-</template>
-
+</template>  
+   
 <script>
 import {
   QToolbar,
@@ -87,6 +87,20 @@ export default {
     }
   },
 
+<<<<<<< HEAD
+=======
+  methods: {
+    notify (eventName) {
+    },
+    openSpecialPosition (position) {
+      this.position = position
+      this.$nextTick(() => {
+        this.$refs.positionModal.open()
+      })
+    }
+  },
+
+>>>>>>> 460b333d8799150ab52ddd6b6e0bec53f6ec9835
   mounted: function () {
     // this.bounds = new google.maps.LatLngBounds()
     // const element = document.getElementById(this.mapName)

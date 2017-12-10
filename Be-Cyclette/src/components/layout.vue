@@ -6,17 +6,12 @@
     :right-breakpoint="layoutStore.rightBreakpoint"
     :reveal="layoutStore.reveal"
   >
-
-
     <q-tabs style="position: fixed; bottom: 0; width: 100%;" Position="bottom" slot="navigation" v-if="!layoutStore.hideTabs">
-      <q-route-tab slot="title" icon="play_circle_outline" to="Wallet" replace label="Wallet" />
-      <q-route-tab slot="title" icon="view_array" to="Map" replace label="Map" />
-      <q-route-tab slot="title" icon="view_array" to="Brand" replace label="My truc" />
-      <q-route-tab slot="title" icon="pin_drop" to="Setting" replace label="Settings" />
+      <q-route-tab default slot="title" icon="monetization_on" to="Discount" replace label="Discount" />
+      <q-route-tab slot="title" icon="account_balance_wallet" to="Wallet" replace label="Wallet" />
+      <q-route-tab slot="title" icon="map" to="Map" replace label="Map" />
+      <q-route-tab slot="title" icon="settings" to="Setting" replace label="Settings" />
     </q-tabs>
-
-
-
     <router-view />
   </q-layout>
 </template>

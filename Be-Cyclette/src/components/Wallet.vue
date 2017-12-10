@@ -4,73 +4,35 @@
     view="lHh Lpr fff"
     :left-class="{'bg-grey-2': true}"
   >
-    <q-toolbar slot="header" class="">
-      <!-- <q-btn
-        flat
-        @click="$refs.layout.toggleLeft()"
-      >
-        <q-icon name="menu" />
-      </q-btn> -->
-
-      <q-toolbar-title class="center">
-        Be-Cyclette
-        <div slot="subtitle">Running on Be-Cyclette v{{$q.version}}</div>
-      </q-toolbar-title>
-    </q-toolbar>
-
+  <q-toolbar>
+        <q-toolbar-title>Wallet</q-toolbar-title>
+  </q-toolbar>
 
     <!--
       Replace following <div> with
       <router-view /> component
       if using subRoutes
     -->
-    <q-list highlight>
-        <q-item>
-            <q-item-side left>
-            <i class="material-icons">star_border</i>
-          </q-item-side>
-            <q-item-main>
-            <q-item-tile label>John Doe</q-item-tile>
-            <q-item-tile sublabel>Quasar enthusiast</q-item-tile>
-            </q-item-main>
-            <q-item-side right>
-            <i class="material-icons">chevron_right</i>
+    <q-list highlight inset-separator>
+        <q-item style="height: 50px;">
+          <q-item-side avatar="statics/ticket.jpg" />
+          <q-item-main label="MAX - 15 % discount" label-lines="1" />
+          <q-item-side right>
+                <q-icon name="chevron_right" style="font-size: 25px" />
             </q-item-side>
         </q-item>
-        <q-item>
-            <q-item-side left>
-            <i class="material-icons">star_border</i>
-          </q-item-side>
-            <q-item-main>
-            <q-item-tile label>John Doe</q-item-tile>
-            <q-item-tile sublabel>Quasar enthusiast</q-item-tile>
-            </q-item-main>
-            <q-item-side right>
-            <i class="material-icons">chevron_right</i>
+        <q-item style="height: 50px;">
+          <q-item-side avatar="statics/ticket.jpg" />
+          <q-item-main label="Adidas - 5 % discount" label-lines="1" />
+          <q-item-side right>
+                <q-icon name="chevron_right" style="font-size: 25px" />
             </q-item-side>
         </q-item>
-        <q-item>
-            <q-item-side left>
-            <i class="material-icons">star_border</i>
-          </q-item-side>
-            <q-item-main>
-            <q-item-tile label>John Doe</q-item-tile>
-            <q-item-tile sublabel>Quasar enthusiast</q-item-tile>
-            </q-item-main>
-            <q-item-side right>
-            <i class="material-icons">chevron_right</i>
-            </q-item-side>
-        </q-item>
-        <q-item>
-            <q-item-side left>
-            <i class="material-icons">star_border</i>
-          </q-item-side>
-            <q-item-main>
-            <q-item-tile label>John Doe</q-item-tile>
-            <q-item-tile sublabel>Quasar enthusiast</q-item-tile>
-            </q-item-main>
-            <q-item-side right>
-            <i class="material-icons">chevron_right</i>
+        <q-item style="height: 50px;">
+          <q-item-side avatar="statics/ticket.jpg" />
+          <q-item-main label="Ikea - 5 % discount" label-lines="1" />
+          <q-item-side right>
+                <q-icon name="chevron_right" style="font-size: 25px" />
             </q-item-side>
         </q-item>
     </q-list>
