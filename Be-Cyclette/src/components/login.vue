@@ -12,7 +12,7 @@
         <q-input v-model="password" type="password" float-label="Password" />
     </q-field>
   </div>
-  <q-btn @click="$router.push('/layout')" type="submit" color="primary" class="loginbutton">Log in</q-btn>
+  <q-btn @click="$router.push('/Discount')" type="submit" color="primary" class="loginbutton">Log in</q-btn>
 </center>
 </div>
 </template>

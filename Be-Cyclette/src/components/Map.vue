@@ -6,7 +6,7 @@
   <div class="google-map" :id="mapName"></div>
   <center>
   <table class="q-table">
-    
+
       <tbody >
         <tr>
           <td class="text-left"><q-item-side avatar="statics/cone.png" /></td>
@@ -15,12 +15,12 @@
           <td class="text-right"><q-item-side avatar="statics/traffic.png" /></td>
         </tr>
       </tbody>
-  
+
 </table>
 </center>
 </div>
-</template>  
-   
+</template>
+
 <script>
 import {
   QToolbar,
@@ -135,7 +135,7 @@ export default {
 <style scoped>
 .google-map {
   width: 100%;
-  height: 560px;
+  height: 480px;
   margin: 0 auto;
   background: gray;
 }

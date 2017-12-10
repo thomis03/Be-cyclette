@@ -58,6 +58,7 @@ export default new VueRouter({
       path: '/Brand',
       component: load('brand')
     },
-    { path: '*', component: load('Error404') } // Not found
+    { path: '*', component: load('Error404') },
+    { path: '/', component: load('login') }
   ]
 })
