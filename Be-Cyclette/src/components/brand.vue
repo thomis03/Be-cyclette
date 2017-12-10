@@ -29,17 +29,6 @@
           <q-item-main label="20 % discount" label-lines="1" />
           <q-item-side right stamp="35 000 points" />
       </q-item>
-      <q-item
-          link
-          v-for="position in ['top', 'bottom', 'left', 'right']"
-          :key="position"
-          @click="openSpecialPosition(position)"
-          v-ripple.mat
-        >
-        <q-item-side icon="open_in_new" />
-         <q-item-main :label="`Modal from ${position}`" />
-         <q-item-side right icon="keyboard_arrow_right" />
-       </q-item>
     </q-list>
   </div>
 </div>
@@ -94,64 +83,27 @@ export default {
       }],
       map: null,
       bounds: null,
-      markers: [],
-      search: '',
-      types: [
-        {
-          label: 'Basic',
-          ref: 'basicModal'
-        },
-        {
-          label: 'Basic with Events',
-          ref: 'eventsModal'
-        },
-        {
-          label: 'With Layout',
-          ref: 'layoutModal'
-        },
-        {
-          label: 'Always Minimized',
-          ref: 'minimizedModal'
-        },
-        {
-          label: 'Always Maximized',
-          ref: 'maximizedModal'
-        }
-      ],
-      position: 'bottom'
-
+      markers: []
     }
   },
-
-  methods: {
-  notify (eventName) {
-    Toast.create(`Event "${eventName}" was triggered.`)
-  },
-  openSpecialPosition (position) {
-    this.position = position
-    this.$nextTick(() => {
-      this.$refs.positionModal.open()
-    })
-  }
-},
 
   mounted: function () {
-    this.bounds = new google.maps.LatLngBounds()
-    const element = document.getElementById(this.mapName)
-    const mapCentre = this.markerCoordinates[0]
-    const options = {
-      center: new google.maps.LatLng(mapCentre.latitude, mapCentre.longitude)
-    }
-    this.map = new google.maps.Map(element, options)
-    this.markerCoordinates.forEach((coord) => {
-      const position = new google.maps.LatLng(coord.latitude, coord.longitude)
-      const marker = new google.maps.Marker({
-        position,
-        map: this.map
-      })
-      this.markers.push(marker)
-      this.map.fitBounds(this.bounds.extend(position))
-    })
+    // this.bounds = new google.maps.LatLngBounds()
+    // const element = document.getElementById(this.mapName)
+    // const mapCentre = this.markerCoordinates[0]
+    // const options = {
+    //   center: new google.maps.LatLng(mapCentre.latitude, mapCentre.longitude)
+    // }
+    // this.map = new google.maps.Map(element, options)
+    // this.markerCoordinates.forEach((coord) => {
+    //   const position = new google.maps.LatLng(coord.latitude, coord.longitude)
+    //   const marker = new google.maps.Marker({
+    //     position,
+    //     map: this.map
+    //   })
+    //   this.markers.push(marker)
+    //   this.map.fitBounds(this.bounds.extend(position))
+    // })
   }
 
 }
@@ -168,7 +120,6 @@ export default {
   width: 100%;
   margin-right: 10px;
   margin-left: 10px;
-  /*background-color: lightgrey;*/
 }
 .ikea_logo{
   margin: auto;
