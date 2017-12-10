@@ -74,7 +74,7 @@
             </q-item-side>
         </q-item>
     </q-list>
- 
+
 
 
 <!-- <p class="caption">Tab Panes below</p>
@@ -92,23 +92,21 @@
 
 <script>
 import {
-    QLayout,
-    QToolbar,
-    QToolbarTitle,
-    QBtn,
-    QIcon,
-    QList,
-    QListHeader,
-    QItem,
-    QItemSide,
-    QItemMain,
-    QTabs,
-    QTabPane,
-    QTab,
-    QOptionGroup
+  QLayout,
+  QToolbar,
+  QToolbarTitle,
+  QBtn,
+  QIcon,
+  QList,
+  QListHeader,
+  QItem,
+  QItemSide,
+  QItemMain,
+  QTabs,
+  QTabPane,
+  QTab,
+  QOptionGroup
 } from 'quasar'
-
-
 
 export default {
   name: 'index',
@@ -134,10 +132,6 @@ export default {
     }
   }
 }
-
-
-
-
 </script>
 
 <style lang="stylus">

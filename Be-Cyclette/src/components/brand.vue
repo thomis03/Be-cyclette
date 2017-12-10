@@ -29,6 +29,17 @@
           <q-item-main label="20 % discount" label-lines="1" />
           <q-item-side right stamp="35 000 points" />
       </q-item>
+      <q-item
+          link
+          v-for="position in ['top', 'bottom', 'left', 'right']"
+          :key="position"
+          @click="openSpecialPosition(position)"
+          v-ripple.mat
+        >
+        <q-item-side icon="open_in_new" />
+         <q-item-main :label="`Modal from ${position}`" />
+         <q-item-side right icon="keyboard_arrow_right" />
+       </q-item>
     </q-list>
   </div>
 </div>
@@ -48,6 +59,8 @@ import {
   QItemMain,
   QItemTile,
   QChip,
+  QModal,
+  QModalLayout,
   QPopover
 } from 'quasar'
 
@@ -67,6 +80,8 @@ export default {
     QItemMain,
     QItemTile,
     QChip,
+    QModal,
+    QModalLayout,
     QPopover
   },
 
@@ -79,9 +94,47 @@ export default {
       }],
       map: null,
       bounds: null,
-      markers: []
+      markers: [],
+      search: '',
+      types: [
+        {
+          label: 'Basic',
+          ref: 'basicModal'
+        },
+        {
+          label: 'Basic with Events',
+          ref: 'eventsModal'
+        },
+        {
+          label: 'With Layout',
+          ref: 'layoutModal'
+        },
+        {
+          label: 'Always Minimized',
+          ref: 'minimizedModal'
+        },
+        {
+          label: 'Always Maximized',
+          ref: 'maximizedModal'
+        }
+      ],
+      position: 'bottom'
+
     }
   },
+
+  methods: {
+  notify (eventName) {
+    Toast.create(`Event "${eventName}" was triggered.`)
+  },
+  openSpecialPosition (position) {
+    this.position = position
+    this.$nextTick(() => {
+      this.$refs.positionModal.open()
+    })
+  }
+},
+
   mounted: function () {
     this.bounds = new google.maps.LatLngBounds()
     const element = document.getElementById(this.mapName)
@@ -100,9 +153,9 @@ export default {
       this.map.fitBounds(this.bounds.extend(position))
     })
   }
+
 }
 </script>
-
 
 <style scoped>
 .google-map {

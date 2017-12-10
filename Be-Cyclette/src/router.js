@@ -67,6 +67,10 @@ export default new VueRouter({
         {
           path: '/Setting',
           component: load('Wallet')
+        },
+        {
+          path: '/Brand',
+          component: load('brand')
         }
       ]
     },

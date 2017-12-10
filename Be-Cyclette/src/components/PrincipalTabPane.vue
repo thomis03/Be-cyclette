@@ -20,24 +20,23 @@
 
 <script>
 import {
-    QLayout,
-    QTabs,
-    QTabPane,
-    QTab,
-    QOptionGroup,
-    QToolbar,
-    QToolbarTitle,
-    QSearch,
-    QRouteTab,
-    QBtn,
-    QIcon,
-    QItemSide,
-    QItemMain,
-    QSideLink,
-    QListHeader,
-    QScrollArea
+  QLayout,
+  QTabs,
+  QTabPane,
+  QTab,
+  QOptionGroup,
+  QToolbar,
+  QToolbarTitle,
+  QSearch,
+  QRouteTab,
+  QBtn,
+  QIcon,
+  QItemSide,
+  QItemMain,
+  QSideLink,
+  QListHeader,
+  QScrollArea
 } from 'quasar'
-
 
 export default {
   name: 'index',
@@ -65,10 +64,6 @@ export default {
     }
   }
 }
-
-
-
-
 </script>
 
 <style lang="stylus">
