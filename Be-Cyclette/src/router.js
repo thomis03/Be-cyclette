@@ -8,26 +8,6 @@ function load (component) {
   return () => import(`@/${component}.vue`)
 }
 
-// const routes = [
-//   {
-//     path: '/user',
-//     // We point it to our component
-//     // where we defined our QLayout
-//     component: load('user/layout'),
-//     // Now we define the sub-routes.
-//     // These are getting injected into
-//     // layout (from above) automatically
-//     // by using <router-view> placeholder
-//     // (need to specify it in layout)
-//     children: [
-//       {
-//         path: '/Hello',
-//         component: load('Hello')
-//       }
-//     ]
-//   }
-// ]
-
 export default new VueRouter({
   /*
    * NOTE! VueRouter "history" mode DOESN'T works for Cordova builds,
@@ -46,7 +26,7 @@ export default new VueRouter({
 
   routes: [
     {
-      path: '/',
+      path: '/layout',
       // We point it to our component
       // where we defined our QLayout
       component: load('layout'),
@@ -78,6 +58,7 @@ export default new VueRouter({
       path: '/Brand',
       component: load('brand')
     },
-    { path: '*', component: load('Error404') } // Not found
+    { path: '*', component: load('Error404') },
+    { path: '/', component: load('login') }
   ]
 })

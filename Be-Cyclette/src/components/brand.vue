@@ -10,8 +10,8 @@
   <div class="description">
     <h4><img class ="ikea_logo" src="../statics/ikea_logo.png" /></h4>
     <p>Pellentesque vel volutpat nisl, vel volutpat enim. Pellentesque habitant morbi. </p>
-  </div>        
-  <div> 
+  </div>
+  <div>
 
     <q-list highlight inset-separator>
       <q-item>
@@ -29,22 +29,11 @@
           <q-item-main label="20 % discount" label-lines="1" />
           <q-item-side right stamp="35 000 points" />
       </q-item>
-      <q-item
-          link
-          v-for="position in ['top', 'bottom', 'left', 'right']"
-          :key="position"
-          @click="openSpecialPosition(position)"
-          v-ripple.mat
-        >
-        <q-item-side icon="open_in_new" />
-         <q-item-main :label="`Modal from ${position}`" />
-         <q-item-side right icon="keyboard_arrow_right" />
-       </q-item>
     </q-list>
   </div>
 </div>
-</template>  
-   
+</template>
+
 <script>
 import {
   QToolbar,
@@ -94,32 +83,7 @@ export default {
       }],
       map: null,
       bounds: null,
-      markers: [],
-      search: '',
-      types: [
-        {
-          label: 'Basic',
-          ref: 'basicModal'
-        },
-        {
-          label: 'Basic with Events',
-          ref: 'eventsModal'
-        },
-        {
-          label: 'With Layout',
-          ref: 'layoutModal'
-        },
-        {
-          label: 'Always Minimized',
-          ref: 'minimizedModal'
-        },
-        {
-          label: 'Always Maximized',
-          ref: 'maximizedModal'
-        }
-      ],
-      position: 'bottom'
-
+      markers: []
     }
   },
 
@@ -135,22 +99,22 @@ export default {
   },
 
   mounted: function () {
-    // this.bounds = new google.maps.LatLngBounds()
-    // const element = document.getElementById(this.mapName)
-    // const mapCentre = this.markerCoordinates[0]
-    // const options = {
-    //   center: new google.maps.LatLng(mapCentre.latitude, mapCentre.longitude)
-    // }
-    // this.map = new google.maps.Map(element, options)
-    // this.markerCoordinates.forEach((coord) => {
-    //   const position = new google.maps.LatLng(coord.latitude, coord.longitude)
-    //   const marker = new google.maps.Marker({
-    //     position,
-    //     map: this.map
-    //   })
-    //   this.markers.push(marker)
-    //   this.map.fitBounds(this.bounds.extend(position))
-    // })
+     this.bounds = new google.maps.LatLngBounds()
+     const element = document.getElementById(this.mapName)
+     const mapCentre = this.markerCoordinates[0]
+     const options = {
+       center: new google.maps.LatLng(mapCentre.latitude, mapCentre.longitude)
+     }
+     this.map = new google.maps.Map(element, options)
+     this.markerCoordinates.forEach((coord) => {
+       const position = new google.maps.LatLng(coord.latitude, coord.longitude)
+       const marker = new google.maps.Marker({
+         position,
+         map: this.map
+       })
+       this.markers.push(marker)
+       this.map.fitBounds(this.bounds.extend(position))
+     })
   }
 
 }
@@ -167,7 +131,6 @@ export default {
   width: 100%;
   margin-right: 10px;
   margin-left: 10px;
-  /*background-color: lightgrey;*/
 }
 .ikea_logo{
   margin: auto;
