@@ -35,8 +35,7 @@
       <router-view /> component
       if using subRoutes
     -->
-    <q-list highlight inset-separator link>
-        
+    <q-list highlight inset-separator>
         <q-item style="height: 50px;" link to="/Brand">
             <q-item-side left>
                 <q-icon name="star" color="orange" style="font-size: 25px" />
@@ -49,7 +48,6 @@
                 <q-icon name="chevron_right" style="font-size: 25px" />
             </q-item-side>
         </q-item>
-        </q-side-link>
         <q-item style="height: 50px;">
             <q-item-side left>
                 <q-icon name="star_border" style="font-size: 25px" />
